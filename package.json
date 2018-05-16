@@ -1,0 +1,15 @@
+{
+  "name": "netcalculator",
+  "version": "1.0.0",
+  "description": "A web calculator that allows multiple users to share the same calculator",
+  "main": "NetCalcServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jacob Youakim",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "*",
+    "express": "*"
+  }
+}

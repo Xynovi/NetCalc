@@ -1,0 +1,98 @@
+		<script>
+			io.sockets.emit('incoming data', {new: history});
+			function insert(num){
+				document.form.textview.value = document.form.textview.value+num;
+			}
+
+			function equal(){
+				var exp = document.form.textview.value;
+				if(exp){
+					document.form.textview.value = eval(exp);
+				}	
+			}
+
+			function clearAll(){
+				document.form.textview.value = "";
+			}
+
+			function backSpace(){
+				var exp = document.form.textview.value;
+				document.form.textview.value = exp.substring(0,exp.length-1);
+			}
+
+			$textview.on('incoming data', function(data){
+					console.log('data displayed');
+					$textview.val() = $textview.val()+data.msg;
+				});
+
+				$one.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $one.val());
+				});
+
+				$two.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $two.val());
+				});
+
+				$three.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $three.val());
+				});
+
+				$four.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $four.val());
+				});
+
+				$five.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $five.val());
+				});
+
+				$six.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $six.val());
+				});
+
+				$seven.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $seven.val());
+				});
+
+				$eight.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $eight.val());
+				});
+
+				$nine.click(function(e){
+					console.log('data sent');
+					socket.emit('send data', $nine.val());
+				});
+
+				var $ClearStuff = $('#ClearStuff');
+				var $back = $('#back');
+				var $divide = $('#divide');
+				var $plus = $('#plus');
+				var $seven = $('#seven');
+				var $eight = $('#eight');
+				var $nine = $('#nine');
+				var $multiply = $('#multiply');
+				var $four = $('#four');
+				var $five = $('#five');
+				var $six = $('#six');
+				var $minus = $('#minus');
+				var $one = $('#one');
+				var $two = $('#two');
+				var $three = $('#three');
+				var $equals = $('#equals');
+				var $zero = $('#zero');
+				var $decimal = $('#decimal');
+				var $main = $('#main');
+
+				$("#textview").on("change paste keyup", function(data){
+					console.log('changed');
+					socket.emit('send data', $textview.val());
+				});
+
+		</script>                            
