@@ -40,7 +40,6 @@
 				socket.on('incoming data', function(data){
 					console.log('History logged');
 					var history = data.new;
-					//$calcHistory.val(history.new);
 					var html = '';
 					for(i = history.length - 1; i > -1; i--){
 						html += history[i] + '<br>';
